@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class TimeCalculator {
     public double calculateTime(double distance, double speed) {
         if (speed <= 0) {
@@ -9,11 +7,13 @@ public class TimeCalculator {
     }
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter distance: ");
-        double distance = scanner.nextDouble();
-        System.out.print("Enter speed: ");
-        double speed = scanner.nextDouble();
+        if (args.length < 2) {
+            System.out.println("Please provide distance and speed as command-line arguments.");
+            return;
+        }
+
+        double distance = Double.parseDouble(args[0]);
+        double speed = Double.parseDouble(args[1]);
 
         TimeCalculator calculator = new TimeCalculator();
         try {

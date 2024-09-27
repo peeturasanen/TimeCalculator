@@ -16,5 +16,5 @@ COPY . /app/
 # Package your application
 RUN mvn package
 
-# Run the main class (assuming your application has a main class)
-CMD ["java", "-jar", "target/TimeCalculator.jar"]
+# Run the main class with command-line arguments for distance and speed
+CMD ["java", "-jar", "target/TimeCalculator.jar", "100", "50"]
