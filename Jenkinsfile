@@ -5,7 +5,7 @@ pipeline {
         // Define Docker Hub credentials ID
         DOCKERHUB_CREDENTIALS_ID = 'dockerhub_credential'
         // Define Docker Hub repository name
-        DOCKERHUB_REPO = 'peeturasanen/tempconverter'
+        DOCKERHUB_REPO = 'peeturasanen/timecalculator'
         // Define Docker image tag
         DOCKER_IMAGE_TAG = 'latest'
     }
@@ -13,7 +13,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout code from Git repository
-                git 'https://github.com/peeturasanen/TempConverterDocker.git'
+                git branch: 'main', url: 'https://github.com/peeturasanen/TimeCalculator.git'
             }
         }
         stage('Build Docker Image') {
